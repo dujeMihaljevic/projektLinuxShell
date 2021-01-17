@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <limits.h>
-#include<fcntl.h> 
+#include <fcntl.h> 
 #define LSH_TOK_BUFSIZE 64
 #define LSH_TOK_DELIM " \t\r\n\a "
 
@@ -30,8 +30,7 @@ char *builtin_str[] = {
   "exit",
   "ls",
   "pwd",
-  "cat",
-
+  "cat"
 };
 int (*builtin_func[]) (char **) = {
   &lsh_cd,
@@ -39,7 +38,7 @@ int (*builtin_func[]) (char **) = {
   &lsh_exit,
   &lsh_ls,
   &lsh_pwd,
-  &lsh_cat,
+  &lsh_cat
 };
 
 int lsh_num_builtins() {
@@ -99,7 +98,7 @@ int lsh_ls(char **args)
 	}
 	else if (args[1] != NULL) {
 		if ((content_count = scandir(args[1], &contents, NULL, alphasort)) < 0) {
-			puts("ERROR"););
+			puts("ERROR");
 		}
 	}
 	else{
